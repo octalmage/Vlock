@@ -1,0 +1,68 @@
+<html>
+ 
+<head>
+ 
+ 
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+ 
+<script src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.3/moment.min.js"></script>
+
+ 
+ <script src="app.js"></script>
+ 
+<script type="text/javascript">
+    
+	$(document).on("ready",function()
+	{
+     		//loadvideoplayer("EfDfdyBldz0");
+ 	})  
+ 
+	var yplayer;
+ 
+	function loadvideoplayer(id)
+	{
+    		console.log("Loading:" + id)
+		var params = { allowScriptAccess: "always" };
+    		var atts = { id: "myytplayer" , autoplay: 1, wmode: 'transparent'};
+    		swfobject.embedSWF("http://www.youtube.com/v/" + id + "?enablejsapi=1&playerapiid=yplayer&version=3&autoplay=1", "ytapiplayer", "100%", "100%", "8", null, null, params, atts);
+	}
+ 
+ 
+ 	function onYouTubePlayerReady(event)
+ 	{
+		console.log("YouTube Player Ready.");
+    		yplayer = document.getElementById("myytplayer");
+    		yplayer.addEventListener("onStateChange", "onytplayerStateChange");
+ 	}
+
+
+ 	function onytplayerStateChange(newState)
+   {
+		if (newState==0)
+		{
+			yplayer.loadVideoById("EfDfdyBldz0")
+		}
+	}
+</script>
+
+<style type="text/css">
+	body
+	{
+		background-color:#000;
+	}
+</style>
+ 
+</head>
+ 
+<body>
+ <input type="time" id="time">
+ <button id="startButton">Start</button>
+<div id='ytapiplayer'></div>
+ 
+</div>
+
+</body>
+ 
+</html>
