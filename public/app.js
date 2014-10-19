@@ -40,6 +40,7 @@ function checkTime()
 	if (moment().format("HHmm")==time.format("HHmm"))
 	{
 		clearTimeout(t);
+		$("#time").hide();
 		win.enterFullscreen();
 		loadvideoplayer("EfDfdyBldz0");
 	}
