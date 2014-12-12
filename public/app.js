@@ -17,7 +17,7 @@ if (process.platform === "darwin")
 $(document).on("ready",function()
 {
 
-	win.showDevTools();
+	//win.showDevTools();
 
 	$("#startButton").on("click", function()
 	{
@@ -25,6 +25,8 @@ $(document).on("ready",function()
 		time=moment(today + " " + $("#time").val());
 
 		checkTime();
+
+		win.hide();
 
 		t=setInterval(function()
 		{
@@ -40,8 +42,10 @@ function checkTime()
 	if (moment().format("HHmm")==time.format("HHmm"))
 	{
 		clearTimeout(t);
-		$("#time").hide();
+		$("#controls").hide();
+		win.show();
 		win.enterFullscreen();
-		loadvideoplayer("EfDfdyBldz0");
+
+		loadvideoplayer($("#video").val());
 	}
 }
