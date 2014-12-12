@@ -2,20 +2,16 @@
  
 <head>
  
- 
 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
  
 <script src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
  
- 
- 
- 
-
- 
 <style type="text/css">
 	body
 	{
+		color:white;
+		font-size:26px;
 		background-color:#000;
 	}
 </style>
@@ -23,24 +19,20 @@
 </head>
  
 <body>
+<br>
+<center>Loading...</center>
 
 <script>
-var gui = require('nw.gui');
-var win = gui.Window.get();
-var express = require('express');
-var app = express();
+	var gui = require('nw.gui');
+	var win = gui.Window.get();
+	var express = require('express');
+	var app = express();
 
-app.use(express.static('./public'));
+	app.use(express.static('./public'));
 
-app.listen(5445);
-win.show();
-window.location="http://127.0.0.1:5445";
-
-
-
-
-
-
+	app.listen(5445);
+	win.show();
+	window.location="http://127.0.0.1:5445";
 </script>
  
 </body>
