@@ -8,27 +8,19 @@
  
 <script src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.3/moment.min.js"></script>
-
  
- <script src="app.js"></script>
- 
+<script src="app.js"></script> 
 <script type="text/javascript">
-    
-	$(document).on("ready",function()
-	{
-     		//loadvideoplayer("EfDfdyBldz0");
- 	})  
  
 	var yplayer;
  
 	function loadvideoplayer(id)
 	{
     		console.log("Loading:" + id)
-		var params = { allowScriptAccess: "always" };
+			var params = { allowScriptAccess: "always" };
     		var atts = { id: "myytplayer" , autoplay: 1, wmode: 'transparent'};
     		swfobject.embedSWF("http://www.youtube.com/v/" + id + "?enablejsapi=1&playerapiid=yplayer&version=3&autoplay=1", "ytapiplayer", "100%", "100%", "8", null, null, params, atts);
 	}
- 
  
  	function onYouTubePlayerReady(event)
  	{
@@ -37,9 +29,8 @@
     		yplayer.addEventListener("onStateChange", "onytplayerStateChange");
  	}
 
-
  	function onytplayerStateChange(newState)
-   {
+   	{
 		if (newState==0)
 		{
 			yplayer.loadVideoById("EfDfdyBldz0")
@@ -50,15 +41,23 @@
 <style type="text/css">
 	body
 	{
+		margin:0px;
+		padding:0px;
 		background-color:#000;
+		text-align: center;
+		color:white;
 	}
+
 </style>
  
 </head>
  
 <body>
- <input type="time" id="time">
+<div id="controls">
+ Time: <input type="time" id="time"><br>
+ Video: <input type="text" id="video" value="EfDfdyBldz0"><br>
  <button id="startButton">Start</button>
+ </div>
 <div id='ytapiplayer'></div>
  
 </div>
