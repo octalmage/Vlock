@@ -6,12 +6,12 @@ var t;
 
 if (process.platform === "darwin")
 {
-	var mb = new gui.Menu(
+	var nativeMenuBar = new gui.Menu(
 	{
 		type: "menubar"
 	});
-	mb.createMacBuiltin("Marknote");
-	win.menu = mb;
+	nativeMenuBar.createMacBuiltin("Pass");
+	win.menu = nativeMenuBar;
 }
 
 $(document).on("ready",function()
