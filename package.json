@@ -11,7 +11,7 @@
     "show": false
   },
   "author": "Jason Stallings <jason@stallin.gs>",
-  "license": "GPL v2",
+  "license": "GPL-3.0",
   "webkit": {
     "plugin": true
   },
