@@ -32,9 +32,9 @@ $(document).on("ready",function()
 		{
 			checkTime();
 		},10000);
-	})
+	});
     
- })  
+});
 
 function checkTime()
 {
