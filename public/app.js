@@ -59,6 +59,6 @@ function checkTime()
 	
 		});
 
-		loadvideoplayer($("#video").val());
+		
 	}
 }
