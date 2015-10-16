@@ -50,7 +50,7 @@ function checkTime()
 		{
 			loadvideoplayer($("#video").val());
 			
-			//Hack to fix YouTube video size.
+			//Hack to fix YouTube video size. 
 			setTimeout(function()
 			{
 				win.resizeBy(-1, -1);
